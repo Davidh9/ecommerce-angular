@@ -1,0 +1,23 @@
+.container-app {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.footer-container {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    height: 100%;
+}
+
+.footer-app {
+    width: 100%;
+    text-align: center;
+}
+
+.text-footer {
+    background-color: hsl(26, 100%, 55%);
+    height: 35px;
+    margin-bottom: 0px;
+}

@@ -5,12 +5,18 @@
 }
 
 .option{
+    height: 100%;   
     color: hsl(219, 9%, 45%);
     cursor: pointer;
-    transition: 0.5s;
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    border-bottom-color: white;
+    border-style: none none solid none;
+    font-family: 'Kumbh Sans', sans-serif;
 }
 .option:hover{
-    transition: 0.5s;
     color: hsl(220, 13%, 13%)
 }
 
@@ -25,9 +31,32 @@
     background-color: white !important;
 }
 
+
 .profile-image{
-    width: 56px;
-    height: 56px;
-    margin-top: -16px;
+    width: 62px;
+    height: 62px;
+    margin-top: -19px;
+    margin-left: -3px;
+    border-radius: 50%;
+    border-color: rgba(255, 255, 255, 0);
+    border-style: solid;
+    transition: 0.5s;
+    
+}
+.profile-image:hover{
+    transition: 0.5s;
+    border-color: hsl(26, 100%, 55%);
+    border-style: solid;
+}
+
+.options-container {
+    height: 100%;
+    align-items: center;
+}
+
+.active{
+    color: hsl(220, 13%, 13%);
+    border-bottom-color: hsl(26, 100%, 55%);
+    border-style: none none solid none;
 }
 

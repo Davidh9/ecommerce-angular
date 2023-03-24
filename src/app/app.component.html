@@ -1,28 +1,18 @@
-<div>
+<div class="container-app">
   <app-toolbar></app-toolbar>
 
-  <!-- Collections
-  Men
-  Women
-  About
-  Contact
+  <router-outlet></router-outlet>
 
-  Sneaker Company
-
-  Fall Limited Edition Sneakers
-
-  These low-profile sneakers are your perfect casual wear companion. Featuring a 
-  durable rubber outer sole, they’ll withstand everything the weather can offer.
-
-  $125.00
-  50%
-  $250.00
-
-  0
-  Add to cart -->
-  
-  <!-- <div>
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div> -->
+  <div *ngIf="route.url === '/collections'" class="footer-container">
+    <div class="footer-app">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+          <path fill="#FF7D1A" fill-opacity="1"
+          d="M0,160L60,149.3C120,139,240,117,360,106.7C480,96,600,96,720,128C840,160,960,224,1080,229.3C1200,235,1320,181,1380,154.7L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z">
+        </path>
+      </svg>
+      <p class="text-footer">
+        Coded by <a href="#" class="ms-1">David Hernandez</a>.
+      </p>
+    </div>
+  </div>
 </div>
