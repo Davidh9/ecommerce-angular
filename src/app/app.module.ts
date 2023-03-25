@@ -16,6 +16,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { AdidasComponent } from './components/adidas/adidas.component';
 import { NikeComponent } from './components/nike/nike.component';
 import { PumaComponent } from './components/puma/puma.component';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { PumaComponent } from './components/puma/puma.component';
     MatToolbarModule,
     MatButtonModule,
     RouterModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

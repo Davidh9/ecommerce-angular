@@ -1,0 +1,24 @@
+.content {
+    height: 85vh;
+}
+
+.items-container {
+    width: 430px;
+    height: 200px;
+    border-radius: 20px;
+}
+
+img {
+    height: 200px;
+    width: 190px;
+    margin: -16px;
+    border-radius: 20px 0 0 20px;
+}
+
+.color {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border-style: solid;
+    border-color: gray;
+}

@@ -21,3 +21,7 @@
     height: 35px;
     margin-bottom: 0px;
 }
+
+::ng-deep .mat-progress-spinner circle, .mat-spinner circle {
+    stroke:  hsl(26, 100%, 55%) !important;
+}
