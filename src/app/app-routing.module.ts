@@ -2,13 +2,10 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { AboutComponent } from './components/about/about.component';
-import { AdidasComponent } from './components/adidas/adidas.component';
+import { CatalogueComponent } from './components/catalogue/catalogue.component';
 import { CollectionsComponent } from './components/collections/collections.component';
 import { ContactComponent } from './components/contact/contact.component';
-import { MensComponent } from './components/mens/mens.component';
-import { NikeComponent } from './components/nike/nike.component';
-import { PumaComponent } from './components/puma/puma.component';
-import { WomensComponent } from './components/womens/womens.component';
+import { DetailsComponent } from './components/details/details.component';
 
 const routes: Routes = [
   {
@@ -16,24 +13,16 @@ const routes: Routes = [
     component: CollectionsComponent,
   },
   {
-    path: 'collections/adidas',
-    component: AdidasComponent,
-  },
-  {
-    path: 'collections/nike',
-    component: NikeComponent,
-  },
-  {
-    path: 'collections/puma',
-    component: PumaComponent,
+    path: 'collections/:collection',
+    component: CatalogueComponent,
   },
   {
     path: 'men',
-    component: MensComponent
+    component: CatalogueComponent
   },
   {
     path: 'women',
-    component: WomensComponent
+    component: CatalogueComponent
   },
   {
     path: 'about',
@@ -42,6 +31,10 @@ const routes: Routes = [
   {
     path: 'contact',
     component: ContactComponent
+  },  
+  {
+    path: 'details',
+    component: DetailsComponent
   },  
   {
     path: '**',

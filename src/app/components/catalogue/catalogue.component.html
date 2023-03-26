@@ -1,0 +1,80 @@
+<div *ngIf="!isLoading else loading" class="d-flex content">
+    <div class="filters">
+        <div class="d-flex align-items-center header-filters mb-3 mt-3">
+            <div class="header-tittle ms-3 me-5">Filter By:</div>
+            <button class="ms-5 clear-filters d-flex justify-content-center" mat-mini-fab (click)="clearFilters()">
+                <svg xmlns="http://www.w3.org/2000/svg" height="25" viewBox="0 96 960 960" width="25">
+                    <path
+                        d="M420 536h120V256q0-25-17.25-42.5T480 196q-25.5 0-42.75 17.25T420 256v280ZM180 716h600V596H180v120Zm-64 240h134v-90q0-12.75 8.675-21.375 8.676-8.625 21.5-8.625 12.825 0 21.325 8.625T310 866v90h140v-90q0-12.75 8.675-21.375 8.676-8.625 21.5-8.625 12.825 0 21.325 8.625T510 866v90h140v-90q0-12.75 8.675-21.375 8.676-8.625 21.5-8.625 12.825 0 21.325 8.625T710 866v90h134l-50-200H166l-50 200Zm702 60H142q-39 0-63-31t-14-69l55-220v-80q0-33 23.5-56.5T200 536h160V256q0-50 35-85t85-35q50 0 85 35t35 85v280h160q33 0 56.5 23.5T840 616v80l55 220q10 38-14 69t-63 31Zm-38-420H180h600Zm-240-60H420h120Z" />
+                </svg>
+            </button>
+        </div>
+        <div class="options-filters ms-3">
+
+            <div class="mb-4">
+                <h3>Color</h3>
+                <mat-button-toggle-group #color class="colors-toggle" multiple (valueChange)="filterByColor($event)"
+                    [value]="colorToggle">
+                    <mat-button-toggle *ngFor="let color of colors" class="color mx-3 color-filter"
+                        [style]="setColor(color)" [value]="color"></mat-button-toggle>
+                </mat-button-toggle-group>
+            </div>
+            <div class="mb-4" *ngIf="!gender">
+                <h3>Gender</h3>
+                <mat-button-toggle-group class="ms-2" #gender aria-label="gender" multiple
+                    (valueChange)="filterByGender($event)" [value]="genderToggle">
+                    <mat-button-toggle value="m">Men</mat-button-toggle>
+                    <mat-button-toggle value="w">Women</mat-button-toggle>
+                </mat-button-toggle-group>
+            </div>
+            <div class="mb-4" *ngIf="!brand">
+                <h3>Brand</h3>
+                <mat-button-toggle-group class="ms-2" #gender aria-label="gender" multiple
+                    (valueChange)="filterByBrand($event)" [value]="brandToggle">
+                    <mat-button-toggle value="adidas">Adidas</mat-button-toggle>
+                    <mat-button-toggle value="nike">Nike</mat-button-toggle>
+                    <mat-button-toggle value="puma">Puman</mat-button-toggle>
+                </mat-button-toggle-group>
+            </div>
+            <div class="mb-4">
+                <h3>Price</h3>
+                <div class="ms-2 mb-2">
+                    {{'$' + valueSlider}}
+                </div>
+                <input class="ms-2 slider" type="range" min="0" max="10000" step="100" (change)="valueChange($event)"
+                    [(ngModel)]="valueSlider">
+            </div>
+
+
+
+        </div>
+    </div>
+    <div *ngIf="dataSource.length !== 0 else noData" class="d-flex content pb-2">
+        <div class="d-flex flex-wrap justify-content-center content-sneakers mt-4 pb-2">
+            <button mat-raised-button *ngFor="let item of dataSource" class="items-container me-5 ms-3 mb-5"
+                 routerLink="/details" [queryParams]="{ brand: item['brand'], model: item['model'] }">
+                <div class="d-flex">
+                    <img [src]="getImage(item['model'], item['brand'])" [alt]="item['name']">
+                    <div class="ms-5 d-flex alignt-item-center justify-content-center flex-column align-items-start"
+                        style="overflow: hidden;">
+                        <div>{{item['name']}}</div>
+                        <div>{{'$ ' + item['price']}}</div>
+                        <div>{{item['gender'] === 'm' ? 'Men' : 'Women'}}</div>
+                        <div class="color" [style]="setColor(item['color'])"></div>
+                    </div>
+                </div>
+            </button>
+        </div>
+    </div>
+</div>
+
+<ng-template #loading>
+    <div class="d-flex justify-content-center mt-5">
+        <mat-spinner></mat-spinner>
+    </div>
+</ng-template>
+<ng-template #noData>
+    <h3 class="d-flex flex-wrap justify-content-center content-sneakers mt-4">
+        There is not data
+    </h3>
+</ng-template>
