@@ -1,11 +1,11 @@
-.toolbar-container{
+.toolbar-container {
     height: 100px;
     border-bottom-color: hsl(223, 64%, 98%);
     border-style: none none solid none;
 }
 
-.option{
-    height: 100%;   
+.option {
+    height: 100%;
     color: hsl(219, 9%, 45%);
     cursor: pointer;
     display: flex;
@@ -16,7 +16,8 @@
     border-style: none none solid none;
     font-family: 'Kumbh Sans', sans-serif;
 }
-.option:hover{
+
+.option:hover {
     color: hsl(220, 13%, 13%)
 }
 
@@ -27,12 +28,12 @@
     letter-spacing: -2px;
 }
 
-.btn-bg{
+.btn-bg {
     background-color: white !important;
 }
 
 
-.profile-image{
+.profile-image {
     width: 62px;
     height: 62px;
     margin-top: -19px;
@@ -41,10 +42,16 @@
     border-color: rgba(255, 255, 255, 0);
     border-style: solid;
     transition: 0.5s;
-    
+
 }
-.profile-image:hover{
+
+.profile-image:hover {
     transition: 0.5s;
+    border-color: hsl(26, 100%, 55%);
+    border-style: solid;
+}
+
+.active-btn{
     border-color: hsl(26, 100%, 55%);
     border-style: solid;
 }
@@ -54,9 +61,51 @@
     align-items: center;
 }
 
-.active{
+.active {
     color: hsl(220, 13%, 13%);
     border-bottom-color: hsl(26, 100%, 55%);
     border-style: none none solid none;
 }
 
+.shopp-card {
+    width: 350px;
+    position: absolute;
+    max-height: 350px;
+    overflow: auto;
+    top: 90px;
+    border-radius: 10px;
+    box-shadow: 2px 8px 26px 4px rgba(0, 0, 0, 0.53);
+    -webkit-box-shadow: 2px 8px 26px 4px rgba(0, 0, 0, 0.53);
+    -moz-box-shadow: 2px 8px 26px 4px rgba(0, 0, 0, 0.53);
+    z-index: 1000;
+}
+
+.profile-card{
+    width: 250px;
+    position: absolute;
+    overflow: auto;
+    top: 90px;
+    right: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 8px 26px 4px rgba(0, 0, 0, 0.53);
+    -webkit-box-shadow: 2px 8px 26px 4px rgba(0, 0, 0, 0.53);
+    -moz-box-shadow: 2px 8px 26px 4px rgba(0, 0, 0, 0.53);
+    z-index: 1000;
+}
+
+.img-cart{
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+}
+
+.btn-delete{
+    width: 30px;
+    height: 30px;
+    color: gray;
+    cursor: pointer;
+}
+.btn-delete:active{
+    color: black;
+
+}

@@ -20,6 +20,7 @@ export class CatalogueComponent implements OnInit {
   gender: string = '';
   colors: string[] = [];
   valueSlider = 0;
+  route: string = '';
   formatLabel(value: number): string {
     if (value >= 1000) {
       return Math.round(value / 1000) + 'k';
@@ -30,7 +31,7 @@ export class CatalogueComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit(): void {
-    this.router.url
+    this.route = this.router.url
     if(this.router.url.split("/")[2]){
       this.getDataByBrand();
       return;
@@ -120,12 +121,6 @@ export class CatalogueComponent implements OnInit {
     this.brandToggle = [];
     this.dataSource = [];
     this.dataSource = [...this.dataSource,...this.dataSourceBackup.filter((item: any) => item['price'] <= valor.target.value)]
-  }
-
-  onSelectItem(model: string, brand: string){
-    console.log('brand', brand)
-    console.log('model', model)
-    this.router.navigate(['details', { queryParams: { brand: brand, model: model } } ]);
   }
 
 }

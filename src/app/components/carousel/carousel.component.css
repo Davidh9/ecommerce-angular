@@ -1,0 +1,36 @@
+.image-c{
+    width: 600px !important;
+    height: 600px;
+    border-radius: 20px;
+}
+
+::ng-deep mat-dialog-container{
+    width: 700px !important;
+    height: 700px !important;
+    box-shadow: none!important;
+    background: transparent !important;
+}
+
+::ng-deep mat-dialog-content{
+    max-height: 100% !important;
+    width: 600px !important;
+    height: 600px !important;
+    
+}
+
+.btn-close{
+    width: 25px;
+    height: 25px;
+    background-color: transparent;
+}
+
+.secundary-image{
+    width: 85;
+    height: 85px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.carousel-inner{
+    border-radius: 20px;
+}

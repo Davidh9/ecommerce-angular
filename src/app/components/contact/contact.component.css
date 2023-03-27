@@ -1,0 +1,12 @@
+form{
+    width: 30%;
+    height: 70vh;
+    border-radius: 20px;
+    border-style: solid;
+    border-color: hsl(26, 94%, 61%);
+    background-color: hsla(26, 94%, 61%, 0.179);
+}
+
+::ng-deep .mat-form-field-infix {
+    width: 280px !important;
+}

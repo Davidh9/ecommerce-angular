@@ -18,6 +18,11 @@ import {MatIconModule} from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { DetailsComponent } from './components/details/details.component';
+import { CarouselComponent } from './components/carousel/carousel.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatCardModule} from '@angular/material/card';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -27,7 +32,8 @@ import { DetailsComponent } from './components/details/details.component';
     AboutComponent,
     ContactComponent,
     CatalogueComponent,
-    DetailsComponent
+    DetailsComponent,
+    CarouselComponent
   ],
   imports: [
     BrowserModule,
@@ -43,6 +49,10 @@ import { DetailsComponent } from './components/details/details.component';
     MatButtonToggleModule,
     MatIconModule,
     MatSliderModule,
+    MatDialogModule,
+    MatCardModule,
+    MatSnackBarModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

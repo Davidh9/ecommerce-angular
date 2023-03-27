@@ -1,1 +1,15 @@
-<p>contact works!</p>
+<div class="d-flex justify-content-center flex-column align-items-center mt-5">
+    <form [formGroup]="form" class="d-flex flex-column align-items-center justify-content-between">
+            <h1 class="mt-4">Contact Us!</h1>
+            <mat-form-field class="">
+                <mat-label>Email</mat-label>
+                <input type="email" matInput formControlName="email"
+                       placeholder="Ex. pat@example.com">
+              </mat-form-field>
+              <mat-form-field class="">
+                <mat-label>Message</mat-label>
+                <textarea rows="10" matInput  formControlName="body"></textarea>
+              </mat-form-field>
+              <button class="mb-2" mat-raised-button [disabled]="form.invalid">Send!</button>
+        </form>
+</div>

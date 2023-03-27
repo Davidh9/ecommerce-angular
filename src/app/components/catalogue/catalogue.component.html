@@ -44,15 +44,12 @@
                 <input class="ms-2 slider" type="range" min="0" max="10000" step="100" (change)="valueChange($event)"
                     [(ngModel)]="valueSlider">
             </div>
-
-
-
         </div>
     </div>
     <div *ngIf="dataSource.length !== 0 else noData" class="d-flex content pb-2">
         <div class="d-flex flex-wrap justify-content-center content-sneakers mt-4 pb-2">
             <button mat-raised-button *ngFor="let item of dataSource" class="items-container me-5 ms-3 mb-5"
-                 routerLink="/details" [queryParams]="{ brand: item['brand'], model: item['model'] }">
+                 routerLink="/details" [queryParams]="{ brand: item['brand'], model: item['model'], gender: this.route.split('/')[1] }">
                 <div class="d-flex">
                     <img [src]="getImage(item['model'], item['brand'])" [alt]="item['name']">
                     <div class="ms-5 d-flex alignt-item-center justify-content-center flex-column align-items-start"
@@ -75,6 +72,6 @@
 </ng-template>
 <ng-template #noData>
     <h3 class="d-flex flex-wrap justify-content-center content-sneakers mt-4">
-        There is not data
+        There are no data
     </h3>
 </ng-template>
