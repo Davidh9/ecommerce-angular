@@ -1,7 +1,7 @@
-<div class="container d-flex toolbar-container align-items-center">
+<div *ngIf="device === 'desktop'" class="container d-flex toolbar-container align-items-center">
     <span class="col-2 tittle">sneakers</span>
     <div class="d-flex col-8 text-center options-container">
-        <div class="me-5 option" routerLink="collections" [ngClass]="route.url.includes('collections') ? 'active' : ''">
+        <div class="me-5 option" routerLink="collections" [ngClass]="route.url.includes('collections') || route.url === '/' ? 'active' : ''">
             Collections</div>
         <div class="me-5 option" routerLink="men" [ngClass]="route.url === '/men' || gender === 'men' ? 'active' : ''">Men
         </div>
@@ -31,7 +31,7 @@
                 <hr>
                 <div *ngIf="cartList.length !== 0 else noData">
                     <div *ngFor="let item of cartList; index as i">
-                        <div class="d-flex">
+                        <div class="d-flex justify-content-between">
                             <img [src]="getImage(item.data[0].model,item.data[0].brand)" alt="img" class="img-cart">
                             <div class="ms-2">
                                 <p>{{item.data[0].name}}</p>
@@ -76,3 +76,69 @@
         There are no items in the shopping cart
     </div>
 </ng-template>
+
+
+<div *ngIf="device === 'mobile'" class="d-flex align-items-center justify-content-between">
+    <span class="tittle me-5">sneakers</span>
+    <div class="d-flex justify-content-end align-items-center">
+        <button matTooltip="Shopping cart" mat-mini-fab class="me-3 btn-bg" (click)="onClickCart()">
+            <svg width="22" height="20" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z"
+                    fill="#69707D" fill-rule="nonzero" />
+            </svg>
+        </button>
+        <button matTooltip="Profile" mat-fab class="btn-bg" (click)="onClickProfile()">
+            <img class="profile-image" src="../../../assets/images/image-avatar.png" alt="profile-image"
+                [ngClass]="showProfile ? 'active-btn' : ''">
+        </button>
+        <!-- <mat-card *ngIf="showCart" class="shopp-card">
+            <mat-card-header>
+                <mat-card-title>Shopping Cart</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <hr>
+                <div *ngIf="cartList.length !== 0 else noData">
+                    <div *ngFor="let item of cartList; index as i">
+                        <div class="d-flex justify-content-between">
+                            <img [src]="getImage(item.data[0].model,item.data[0].brand)" alt="img" class="img-cart">
+                            <div class="ms-2">
+                                <p>{{item.data[0].name}}</p>
+                                <div class="d-flex">
+                                    <p class="">{{'$' + item.data[0].price + ' x ' + item.pzs}}</p>
+                                    <div class="ms-4 d-flex">
+                                        Total:
+                                        <p class="ms-1" style="font-weight: 600; color: hsl(26, 100%, 55%);">
+                                            {{('$'+item.data[0].price * item.pzs)}}</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="ms-4" (click)="onDeleteItem(i)">
+                                <mat-icon class="btn-delete">delete</mat-icon>
+                            </div>
+                        </div>
+                        <hr>
+                    </div>
+                </div>
+            </mat-card-content>
+        </mat-card>
+        <mat-card *ngIf="showProfile" class="profile-card">
+            <mat-card-header>
+                <mat-card-title>Profile</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <hr>
+                <div class="ms-2">
+                    <h2>David Hernandez</h2>
+                    <p>Age: 23</p>
+                    <p>Country: Mexico</p>
+                    <p>E-mail: david-hdz@outlook.com</p>
+                </div>
+            </mat-card-content>
+        </mat-card> -->
+    </div>
+</div>
+
+
+

@@ -2,10 +2,12 @@
     width: 200px;
     height: 150px;
 }
+
 .nike-logo {
     width: 300px;
     height: 100px;
 }
+
 .puma-logo {
     width: 250px;
     height: 200px;
@@ -19,9 +21,17 @@
     border-radius: 20px;
     transition: 0.5s;
 }
+
 .container-logo:hover {
     transition: 0.5s;
     border-color: hsl(26, 100%, 55%);
     border-style: solid;
     border-radius: 20px;
+}
+
+@media screen and (max-with: 500px) {
+    .container-logo {
+        width: 300px;
+        height: 220px;
+    }
 }

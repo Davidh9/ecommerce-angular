@@ -23,6 +23,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatCardModule} from '@angular/material/card';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatInputModule} from '@angular/material/input';
+import {MatSidenavModule} from '@angular/material/sidenav';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import {MatInputModule} from '@angular/material/input';
     MatDialogModule,
     MatCardModule,
     MatSnackBarModule,
-    MatInputModule
+    MatInputModule,
+    MatSidenavModule
   ],
   providers: [],
   bootstrap: [AppComponent]

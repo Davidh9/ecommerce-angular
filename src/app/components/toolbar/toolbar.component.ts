@@ -14,6 +14,7 @@ export class ToolbarComponent implements OnInit {
   cartList: any[] = [];
   route: any = {url: '/collections'};
   gender: string | null = '';
+  device: string = 'desktop';
   constructor(private cartService: CartServiceService, private router: Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -23,6 +24,13 @@ export class ToolbarComponent implements OnInit {
         this.gender = this.activatedRoute.snapshot.queryParamMap.get('gender');
       });
     this.getCart();
+    this.getDevice();
+  }
+
+  getDevice(){
+    this.cartService.getDevice().subscribe(res => {
+      this.device = res;
+    })
   }
 
   getCart() {
